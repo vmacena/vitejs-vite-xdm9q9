@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_KEY = '6200b8a6'; // Substitua pela sua chave de API OMDb
-
+const API_KEY = '6200b8a6'; 
 const App: React.FC = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
