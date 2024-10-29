@@ -27,10 +27,11 @@ const App: React.FC = () => {
   const searchMovies = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      // Aqui você pode construir a URL da API usando a query
       const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
       setMovies(response.data.Search || []);
-      setExpandedMovie(null); 
-      setMovieDetails(null); 
+      setExpandedMovie(null);
+      setMovieDetails(null);
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
@@ -59,7 +60,7 @@ const App: React.FC = () => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search for a movie"
+          placeholder="Search by title, year, genre, country, etc."
         />
         <button type="submit">Search</button>
       </form>
