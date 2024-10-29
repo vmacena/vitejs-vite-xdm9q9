@@ -27,7 +27,6 @@ const App: React.FC = () => {
   const searchMovies = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Aqui você pode construir a URL da API usando a query
       const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
       setMovies(response.data.Search || []);
       setExpandedMovie(null);
